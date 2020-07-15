@@ -12,6 +12,7 @@ export const UserImage = styled.img`
   border-radius: 35px;
   margin: 8px;
   border: solid 1px grey;
+  display: inline;
 `;
 
 export const UserBlock = styled.div`
@@ -42,17 +43,5 @@ export const Wrapper = styled.div``;
 export const Interaction = styled.div`
   marign-left: 8px;
 `;
-export const LoveReact = styled.img`
-  width: 60px;
-  height: 60px;
-  margin-right: 8px;
-  :hover {
-    animation: shake 5s;
-    cursor: pointer;
-  }
-`;
-export const Comment = styled.img`
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
-`;
+
+export const CommentWrapper = styled.div``;
