@@ -21,7 +21,7 @@ import {
   CommentWrapper,
 } from "./postStyle";
 
-export default function Post() {
+const Post = props => {
   const [likes, setLikes] = useState(0);
   const [show, setShow] = useState(false);
   const [typingComment, setTypingComment] = useState();
@@ -46,10 +46,11 @@ export default function Post() {
 
   return (
     <Wrapper>
+      {console.log(props)}
       <UserBlock>
-        <UserImage src={url}></UserImage>
+        <UserImage src={props.userImage}></UserImage>
         <UserName>
-          Hesham
+          {props.name}
           <div style={{ display: "block", fontSize: "0.6em" }}>{getDate()}</div>
         </UserName>
       </UserBlock>
@@ -57,7 +58,7 @@ export default function Post() {
         style={{ margin: "auto" }}
         onDoubleClick={() => clickHandle()}
       >
-        <ImageWrapper src={img} />
+        <ImageWrapper src={props.image} />
       </IconButton>
       <Interaction>
         <IconButton onClick={() => clickHandle()}>
@@ -104,4 +105,6 @@ export default function Post() {
       </Interaction>
     </Wrapper>
   );
-}
+};
+
+export default Post;

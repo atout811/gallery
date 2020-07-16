@@ -1,10 +1,10 @@
 import React from "react";
-import Post from "./components/post/post";
+import PostList from "./components/postList/postList";
 
 function App() {
   return (
     <div>
-      <Post />
+      <PostList />
     </div>
   );
 }
