@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Divider from "@material-ui/core/Divider";
 
 import {
   Wrapper,
@@ -52,7 +53,10 @@ export default function Post() {
           <div style={{ display: "block", fontSize: "0.6em" }}>{getDate()}</div>
         </UserName>
       </UserBlock>
-      <IconButton onDoubleClick={() => clickHandle()}>
+      <IconButton
+        style={{ margin: "auto" }}
+        onDoubleClick={() => clickHandle()}
+      >
         <ImageWrapper src={img} />
       </IconButton>
       <Interaction>
@@ -67,12 +71,15 @@ export default function Post() {
         <CommentWrapper>
           <List>
             {comments.map((comment, index) => (
-              <ListItem key={index}>
-                <ListItemAvatar>
-                  <UserImage src={url}></UserImage>
-                </ListItemAvatar>
-                <ListItemText primary={comment} />
-              </ListItem>
+              <div>
+                <ListItem key={index}>
+                  <ListItemAvatar>
+                    <UserImage src={url} />
+                  </ListItemAvatar>
+                  <ListItemText primary={comment} />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+              </div>
             ))}
           </List>
         </CommentWrapper>
@@ -87,9 +94,9 @@ export default function Post() {
               }}
             >
               <TextField
-                id="outlined-basic"
                 label="Your Comment"
                 onChange={event => setTypingComment(event.target.value)}
+                style={{ padding: "15px", display: "flex" }}
               />
             </form>
           </div>
